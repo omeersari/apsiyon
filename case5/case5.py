@@ -1,6 +1,5 @@
 from selenium import webdriver
 from time import sleep
-from selenium.webdriver.common.keys import Keys
 
 email = 'YOUR_EMAIL'
 password = 'YOUR_PASSWORD'
@@ -42,13 +41,7 @@ class N11bot():
         sleep(1)
         search_Btn = self.driver.find_element_by_xpath('//*[@id="header"]/div/div/div[2]/div[1]/a')
         search_Btn.click()
-    def foundResult(self):
-        sonuc = self.driver.find_element_by_xpath('//*[@id="contentListing"]/div/div/div[2]/section/div[1]/div[5]/strong')
-        sonuc = int(sonuc)
-        if sonuc > 0:
-            self.driver.switch_to().alert().sendKeys(sonuc, "bulundu")
-        else:
-            self.driver.switch_to().alert().sendKeys("0", "sonuç bulundu")
+
 
 
 
